@@ -1,0 +1,13 @@
+{
+  "name": "angular-digital-clock",
+  "version": "0.0.5",
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14"
+  },
+  "description": "Test library project",
+  "author": {
+    "name": "Ivan Zhostov"
+  },
+  "keywords": ["digital clock", "test"]
+}

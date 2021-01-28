@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "angular-digital-clock": [
+        "dist/angular-digital-clock"
+      ],
+      "angular-digital-clock/*": [
+        "dist/angular-digital-clock/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

@@ -1,0 +1,87 @@
+$white-color: #ffffff;
+$clock-red: #cb2c2b;
+$rangoon-green: #181818;
+
+.digital-clock-box {
+    background-color: $rangoon-green;
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pixelstalk.net%2Fwp-content%2Fuploads%2F2016%2F08%2FDesktop-HD-digital-images.png&f=1&nofb=1');
+    margin: 5% 30%; 
+    padding: 20px;
+
+    h2 {
+        color: $white-color;
+        font-family: 'ZCOOL QingKe HuangYou', cursive;
+        width: 50%;
+    }
+
+    .format-dropdown-holder {
+        display: flex; 
+        flex-direction: row; 
+        justify-content: space-between; 
+        width: 100%;
+    }
+
+    .digital-clock-wrapper {
+        width: 100%;
+        margin: 0 auto;
+        justify-content: space-between; 
+        border: 1px solid $white-color;
+        border-radius: 15px;
+        padding: 15px;
+        background-color: $rangoon-green;
+        margin-bottom: 2em;
+       
+        .digital-clock-holder {
+            width: 100%;
+            display: flex; 
+            flex-direction: row;
+            justify-content: space-between;
+
+            .am-pm-holder {
+                display: flex; 
+                flex-direction: column; 
+                justify-content: center;
+
+                .pm-am {
+                    color: $white-color;
+
+                    .pm-am-label {
+                        font-size: calc(2px + (26 - 2) * ((100vw - 300px) / (2048 - 300)));
+                    }
+                }
+            }
+        }
+    }
+    
+    .dot {
+        font-size: calc(30px + (200 - 30) * ((100vw - 300px) / (2048 - 300))); 
+        line-height: 0;
+
+        margin-right: 5px;
+        &::after {
+            content: '.';
+        }
+    }
+
+    .double-dot {
+        font-size: calc(40px + (140 - 40) * ((100vw - 300px) / (2048 - 300)));
+        line-height: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: $clock-red; 
+
+        &::after {
+            content: ':';
+        }
+    }
+
+    .version-text {
+        color: $white-color;
+        margin-left: auto;
+        width: fit-content;
+        display: flex;
+        font-size: 1.5em;
+        font-family: 'ZCOOL QingKe HuangYou', cursive;
+    }
+}
