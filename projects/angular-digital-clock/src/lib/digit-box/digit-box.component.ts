@@ -19,7 +19,7 @@ export class DigitBoxComponent implements OnInit {
   formatType: string;
 
   @Input()
-  date: Date;
+  timeValue: any;
 
   constructor() {}
 

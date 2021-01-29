@@ -6,13 +6,13 @@
     <div class="digital-clock-wrapper">
         <div class="digital-clock-holder">
             <app-digit-box [timeUnit]="hour" [timeFormat]="hourFormat" [formatType]="'hour'" timeUnitName="HOUR"
-                [date]="date">
+                [timeValue]="hour">
             </app-digit-box>
             <span class="double-dot"></span>
             <app-digit-box [timeUnit]="minute" [timeFormat]="minuteFormat" [formatType]="'minute'" timeUnitName="MINUTE"
-                [date]="date"></app-digit-box>
+                [timeValue]="minute"></app-digit-box>
             <span class="double-dot"></span>
-            <app-digit-box [timeUnit]="second" timeUnitName="SECOND" [date]="date"></app-digit-box>
+            <app-digit-box [timeUnit]="second" timeUnitName="SECOND" [timeValue]="second"></app-digit-box>
 
             <div class="am-pm-holder">
                 <div class="pm-am">

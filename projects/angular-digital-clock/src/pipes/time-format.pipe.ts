@@ -6,26 +6,24 @@ import {TimeFormat} from '../enums/timeFormat';
   name: "timeFormat",
 })
 export class TimeFormatPipe implements PipeTransform {
-  transform(value: any, format, formatType, date: Date): any {
+  transform(value: any, format, formatType, timeValue): any {
     if (formatType === FormatType.Hour) {
-      return this.formatHour(value, format, date);
+      return this.formatHour(value, format, timeValue);
     } else if (formatType === FormatType.Minute) {
-      return this.formatMinute(value, format, date);
+      return this.formatMinute(value, format, timeValue);
     } else {
-      return this.formatSeconds(value, date);
+      return this.formatSeconds(value, timeValue);
     }
   }
 
-  private formatHour(hour: any, format: any, date: Date) {
-    // Date for tests: "Tue Jan 26 2021 15:00:00 GMT+0200 (Eastern European Standard Time)"
-    const hours = date.getHours();
+  private formatHour(hour: any, format: any, timeValue: any) {
 
     //Check time format and depend on it set 24 hours or 12 hours format
     hour =
       format === TimeFormat.LeadingZero24Hours ||
       format === TimeFormat.NoLeadingZero24Hours
-        ? hours % 24
-        : hours % 12;
+        ? timeValue % 24
+        : timeValue % 12;
 
     //Check time format and value if the value is 0 and the selected format is 12 hours format set 12 o'clock
     hour =
@@ -46,18 +44,16 @@ export class TimeFormatPipe implements PipeTransform {
     return hour;
   }
 
-  private formatMinute(minute: any, format: any, date: Date) {
-    const minutes = date.getMinutes();
+  private formatMinute(minute: any, format: any, timeValue: any) {
     minute =
-      format === TimeFormat.LeadingZeroMinutes && minutes < 10
-        ? "0" + minutes
-        : minutes.toString();
+      format === TimeFormat.LeadingZeroMinutes && timeValue < 10
+        ? "0" + timeValue
+        : timeValue.toString();
     return minute;
   }
 
-  private formatSeconds(value: any, date: Date) {
-    const seconds = date.getSeconds();
-    value = seconds < 10 ? "0" + seconds : seconds.toString();
+  private formatSeconds(value: any, timeValue: any) {
+    value = timeValue < 10 ? "0" + timeValue : timeValue.toString();
     return value;
   }
 }
