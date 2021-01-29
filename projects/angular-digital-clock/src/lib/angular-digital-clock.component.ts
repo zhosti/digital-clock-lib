@@ -38,9 +38,9 @@ export class AngularDigitalClockComponent implements OnInit {
   }
 
   getCurrentDate() {
-    // setInterval(() => {
-    //   this.date = new Date();
-    // }, 1000);
+    setInterval(() => {
+      this.date = new Date();
+    }, 1000);
   }
 
   onFormatSlected(time) {
