@@ -6,24 +6,24 @@ import {TimeFormat} from '../enums/timeFormat';
   name: "timeFormat",
 })
 export class TimeFormatPipe implements PipeTransform {
-  transform(value: any, format, formatType, timeValue): any {
+  transform(value: any, format, formatType): any {
     if (formatType === FormatType.Hour) {
-      return this.formatHour(value, format, timeValue);
+      return this.formatHour(value, format);
     } else if (formatType === FormatType.Minute) {
-      return this.formatMinute(value, format, timeValue);
+      return this.formatMinute(value, format);
     } else {
-      return this.formatSeconds(value, timeValue);
+      return this.formatSeconds(value);
     }
   }
 
-  private formatHour(hour: any, format: any, timeValue: any) {
+  private formatHour(hour: any, format: any) {
 
     //Check time format and depend on it set 24 hours or 12 hours format
     hour =
       format === TimeFormat.LeadingZero24Hours ||
       format === TimeFormat.NoLeadingZero24Hours
-        ? timeValue % 24
-        : timeValue % 12;
+        ? hour % 24
+        : hour % 12;
 
     //Check time format and value if the value is 0 and the selected format is 12 hours format set 12 o'clock
     hour =
@@ -44,16 +44,13 @@ export class TimeFormatPipe implements PipeTransform {
     return hour;
   }
 
-  private formatMinute(minute: any, format: any, timeValue: any) {
-    minute =
-      format === TimeFormat.LeadingZeroMinutes && timeValue < 10
-        ? "0" + timeValue
-        : timeValue.toString();
-    return minute;
+  private formatMinute(minute: any, format: any) {
+    return format === TimeFormat.LeadingZeroMinutes && minute < 10
+        ? "0" + minute
+        : minute.toString();
   }
 
-  private formatSeconds(value: any, timeValue: any) {
-    value = timeValue < 10 ? "0" + timeValue : timeValue.toString();
-    return value;
+  private formatSeconds(value: any) {
+    return value < 10 ? "0" + value : value.toString();
   }
 }

@@ -18,9 +18,6 @@ export class DigitBoxComponent implements OnInit {
   @Input()
   formatType: string;
 
-  @Input()
-  timeValue: any;
-
   constructor() {}
 
   ngOnInit(): void {}
