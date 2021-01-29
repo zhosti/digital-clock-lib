@@ -1,25 +1,18 @@
 <div class="digital-clock-box">
     <div class="format-dropdown-holder">
         <h2>Digital Clock</h2>
-
-        <app-time-format-dropdown [formats]="timeFormats" [formatType]="'hour'" [defaultText]="'Hour Format'"
-            (formatSelected)="onFormatSlected($event)">
-        </app-time-format-dropdown>
-        <app-time-format-dropdown [formats]="minuteFormats" (formatSelected)="onFormatSlected($event)"
-            [defaultText]="'Minute Format'">
-        </app-time-format-dropdown>
     </div>
 
     <div class="digital-clock-wrapper">
         <div class="digital-clock-holder">
-            <app-digit-box [timeUnit]="hour" [timeFormat]="hourFormat" [formatType]="'hour'"
-                timeUnitName="HOUR">
+            <app-digit-box [timeUnit]="hour" [timeFormat]="hourFormat" [formatType]="'hour'" timeUnitName="HOUR"
+                [date]="date">
             </app-digit-box>
             <span class="double-dot"></span>
-            <app-digit-box [timeUnit]="minute" [timeFormat]="minuteFormat" [formatType]="'minute'"
-                timeUnitName="MINUTE"></app-digit-box>
+            <app-digit-box [timeUnit]="minute" [timeFormat]="minuteFormat" [formatType]="'minute'" timeUnitName="MINUTE"
+                [date]="date"></app-digit-box>
             <span class="double-dot"></span>
-            <app-digit-box [timeUnit]="second" timeUnitName="SECOND"></app-digit-box>
+            <app-digit-box [timeUnit]="second" timeUnitName="SECOND" [date]="date"></app-digit-box>
 
             <div class="am-pm-holder">
                 <div class="pm-am">

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormatType } from '../enums/formatType';
 import { PeriodType } from '../enums/periodType';
 import { TimeFormat } from '../enums/timeFormat';
@@ -9,13 +9,14 @@ import { TimeFormat } from '../enums/timeFormat';
   styleUrls: ['./angular-digital-clock.component.scss']
 })
 export class AngularDigitalClockComponent implements OnInit {
+
+  @Input()
+  hourFormat: string;
+
+  @Input()
+  minuteFormat: string;
+  
   date = new Date();
-
-  timeFormats = ["h", "hh", "H", "HH"];
-  minuteFormats = ["m", "mm"];
-
-  hourFormat: string = 'h';
-  minuteFormat: string = 'm';
 
   public get hour() {
     return this.date.getHours();

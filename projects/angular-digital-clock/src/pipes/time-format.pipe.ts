@@ -6,19 +6,19 @@ import {TimeFormat} from '../enums/timeFormat';
   name: "timeFormat",
 })
 export class TimeFormatPipe implements PipeTransform {
-  transform(value: any, format, formatType): any {
+  transform(value: any, format, formatType, date: Date): any {
     if (formatType === FormatType.Hour) {
-      return this.formatHour(value, format);
+      return this.formatHour(value, format, date);
     } else if (formatType === FormatType.Minute) {
-      return this.formatMinute(value, format);
+      return this.formatMinute(value, format, date);
     } else {
-      return this.formatSeconds(value);
+      return this.formatSeconds(value, date);
     }
   }
 
-  private formatHour(hour: any, format: any) {
+  private formatHour(hour: any, format: any, date: Date) {
     // Date for tests: "Tue Jan 26 2021 15:00:00 GMT+0200 (Eastern European Standard Time)"
-    const hours = new Date().getHours();
+    const hours = date.getHours();
 
     //Check time format and depend on it set 24 hours or 12 hours format
     hour =
@@ -46,8 +46,8 @@ export class TimeFormatPipe implements PipeTransform {
     return hour;
   }
 
-  private formatMinute(minute: any, format: any) {
-    const minutes = new Date().getMinutes();
+  private formatMinute(minute: any, format: any, date: Date) {
+    const minutes = date.getMinutes();
     minute =
       format === TimeFormat.LeadingZeroMinutes && minutes < 10
         ? "0" + minutes
@@ -55,8 +55,8 @@ export class TimeFormatPipe implements PipeTransform {
     return minute;
   }
 
-  private formatSeconds(value: any) {
-    const seconds = new Date().getSeconds();
+  private formatSeconds(value: any, date: Date) {
+    const seconds = date.getSeconds();
     value = seconds < 10 ? "0" + seconds : seconds.toString();
     return value;
   }

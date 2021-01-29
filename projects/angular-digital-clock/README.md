@@ -1,24 +1,15 @@
-# AngularDigitalClock
+# AngularDigitalClockLib
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+## Usage
 
-## Code scaffolding
+Make `npm i angular-digital-clock` for adding the digital clock lin in your project.
 
-Run `ng generate component component-name --project angular-digital-clock` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project angular-digital-clock`.
-> Note: Don't forget to add `--project angular-digital-clock` or else it will be added to the default project in your `angular.json` file. 
+Than import `import { AngularDigitalClockModule } from 'angular-digital-clock';` it in your `app.module.ts` file.
 
-## Build
+And your ready to use it in your template `<lib-angular-digital-clock></lib-angular-digital-clock>`
 
-Run `ng build angular-digital-clock` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Publishing
-
-After building your library with `ng build angular-digital-clock`, go to the dist folder `cd dist/angular-digital-clock` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test angular-digital-clock` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+| Property  | Description  | Default value   | Example  |
+| ------------ | ------------ | ------------ | ------------ |
+| hourFormat  | The supported `hourFormat` is `h`,`hh`, `H`, `HH`   | `h`  | `[hourForamt]="HH"`  |
+| minuteFormat  | The supported `hourFormat` is `m`,`mm`   | `m`  | `[minuteFormat]="'mm"`  |
