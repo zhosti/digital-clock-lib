@@ -1,10 +1,10 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/angular-digital-clock",
+  "assets": [
+    "src/assets/fonts.scss"
+  ],
   "lib": {
-    "entryFile": "src/public-api.ts",
-    "umdModuleIds": {
-      "timeFormatData": "timeFormatData"
-    }
+    "entryFile": "src/public-api.ts"
   }
 }

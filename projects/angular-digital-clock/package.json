@@ -1,6 +1,6 @@
 {
   "name": "angular-digital-clock",
-  "version": "0.1.9",
+  "version": "0.3.1",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"
