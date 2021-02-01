@@ -15,7 +15,12 @@
             "tsConfig": "projects/angular-digital-clock/tsconfig.lib.json",
             "project": "projects/angular-digital-clock/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/angular-digital-clock/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
