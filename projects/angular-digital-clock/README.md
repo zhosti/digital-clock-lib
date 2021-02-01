@@ -24,5 +24,5 @@ And your ready to use it in your template `<lib-angular-digital-clock></lib-angu
 
 | Property  | Description  | Default value   | Example  |
 | ------------ | ------------ | ------------ | ------------ |
-| hourFormat  | The supported `hourFormat` is `h`,`hh`, `H`, `HH`   | `h`  | `[hourForamt]="HH"`  |
-| minuteFormat  | The supported `hourFormat` is `m`,`mm`   | `m`  | `[minuteFormat]="'mm"`  |
+| hourFormat  | The supported `hourFormat` is `h`,`hh`, `H`, `HH`   | `h`  | `[hourForamt]="'HH'"`  |
+| minuteFormat  | The supported `hourFormat` is `m`,`mm`   | `m`  | `[minuteFormat]="'mm'"`  |
